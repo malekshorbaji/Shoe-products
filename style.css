@@ -1,0 +1,150 @@
+*{/*all*/
+    padding: 0;/*بدون بادينج*/
+    margin: 0;/*بدون مارجين*/
+    font-family: sans-serif;/*شكل الخط*/
+}
+body{
+    background: linear-gradient(#e24b97,#2d548f);/*دمج لونين*/
+    height: 100vh;/*طول الشاشة بالكامل*/
+    width: 100%;
+    display: flex;/*run move*/
+    justify-content: center;/*move container من جنب*/
+    align-items: center; /*التحريك كونتينر ع النص من فوق*/
+}
+body::after{/*ضيف شغلة على البادي*/ /*دائرة*/
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 234, 0.705);
+    position: absolute;
+    z-index: -1;/*ح تكون الدائرة تحت المربع البادي*/
+    clip-path: circle(40% at right 70%);/*ترسم*//*جهة اليمين*/
+    /*70% تنزل تحت*/
+   
+
+
+
+}
+
+.container{
+    width: 80%;
+    height: 80%;
+    background: rgba(167, 6, 33, 0.63);/*255,255,255 color white*/
+    /*0.1 افتح درجة من اللون الابيض*/
+    border-radius:20px ;/*انحناء الاطار من زوايا*/
+    overflow: hidden; /*ايا شي بيطلع برا الكونتينر المربع اعملها اخفاء*/
+
+}
+nav{
+    display: flex;
+    justify-content: space-between;/* افصل بينهم بين اديداس لحال و الباقي لحال*/
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;/*20px top under, 0 left right*/
+
+
+}
+nav .logo{/*for word addidas*/
+    color: white;/*white*/
+    text-decoration: none;/*حذف الخط تحت الكلمة*/
+    font-size: 35px;/*size word*/
+    text-transform: uppercase;/*capital letter*/
+    letter-spacing: 3px;/*تباعد الحروف*/
+    font-weight: 700;/*تسميك الخط*/
+
+}
+
+nav ul li{/*for words الباقية*/
+ display: inline-block;/*العناصر على خط واحد*/
+  margin: 0 6px;/*من فوق وتحت صفر و يمين وشمال ستة*/
+
+}
+nav ul li a {/*الباقية*/
+color: white;
+text-decoration: none;/*بدون خط تحته*/
+font-size: 18px;
+font-weight: 500;
+}
+nav ul li a:hover{/*لو اشرت بالماوس */
+color: rgb(0, 89, 255);
+
+}
+
+.content{/*for img and words*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;/*كتابة بالنص*/
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+.content .text{/*for words*/
+   color: #b7b92a9d;
+   width: 40%; 
+}
+.content .text h2{
+    font-size: 40px;
+    text-transform: uppercase;/*capital letter*/
+    font-weight: 700;
+    letter-spacing: 2px;/*تباعد الحروف*/
+
+}
+
+.content .text p{
+    font-size: 18px;
+    line-height: 25px;/*تباعد السطور*/
+    margin: 10px 0;/*فوق وتحت10 ويمين ويسار صفر*/
+    letter-spacing: 1px;
+
+}
+
+.content .image{/*for pic*/
+    width: 40%;
+    
+
+}
+.content .image img{
+    width: 400px;
+}
+
+/*responsive for screen*/
+
+@media (min-width:950px) and (max-width:1150px) {
+   
+    .content .image img{
+        width: 330px;/*صغرنا الصورة*/
+    }
+    
+}
+@media (max-width:950px) {/*بالشاشات الصغيرة كتابة فوق الصورة تحت*/
+   
+    .content, nav{
+        flex-direction: column;/*الكتابات فوق بعض*/
+     
+    }
+    
+    .content .image, .content .text{
+        width:80%;
+    }
+    body::after{
+        clip-path: circle(50% at bottom);/*بتصير تحت*/
+
+    }
+
+    
+   
+}
+.image:hover{
+    transform: scalex(-1);/*size x width maklop*/
+}
+.image:active{
+ 
+    transform: scale(-1);/*maklop*/
+}
+
+
+
+
+
+ 
